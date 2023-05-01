@@ -88,15 +88,79 @@ function addEmployee() {
 
 // functions for the two employee types, which are called in addEmployee() switch statement
 function addEngineer() {
-  console.log('You have selected Engineer!')
-  // re-run addEmployee()
-  addEmployee()
+  inquirer.prompt([
+    {
+      type: 'input',
+      name: 'name',
+      message: "Please enter the engineer's name:"
+    },
+    {
+      type: 'input',
+      name: 'id',
+      message: "Please enter the engineer's employee ID:"
+    },
+    {
+      type: 'input',
+      name: 'email',
+      message: "Please enter the engineer's email address:",
+      validate: validateEmail
+    },
+    {
+      type: 'input',
+      name: 'github',
+      message: "Please enter the engineer's Github username:"
+    }
+  ]).then((answers) => {
+    // creating an engineer object based on user input
+    const engineer = {
+      name: answers.name,
+      id: answers.id,
+      email: answers.email,
+      officeNum: answers.github
+    }
+    // adding engineer to teamRoster array
+    teamRoster.push(engineer)
+    // after engineer info is entered, calling the addEmployee function
+    addEmployee()
+  })
 }
 
 function addIntern() {
-  console.log('You have selected Intern!')
-  // re-run addEmployee()
-  addEmployee()
+  inquirer.prompt([
+    {
+      type: 'input',
+      name: 'name',
+      message: "Please enter intern's name:"
+    },
+    {
+      type: 'input',
+      name: 'id',
+      message: "Please enter the intern's employee ID:"
+    },
+    {
+      type: 'input',
+      name: 'email',
+      message: "Please enter the intern's email address:",
+      validate: validateEmail
+    },
+    {
+      type: 'input',
+      name: 'school',
+      message: "Please enter the intern's school:"
+    }
+  ]).then((answers) => {
+    // creating an intern object based on user input
+    const intern = {
+      name: answers.name,
+      id: answers.id,
+      email: answers.email,
+      school: answers.school
+    }
+    // adding manager to teamRoster array
+    teamRoster.push(intern)
+    // after intern info is entered, calling the addEmployee function
+    addEmployee()
+  })
 }
 
 // init function, in this case starting by calling addManager()
