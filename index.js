@@ -37,7 +37,7 @@ function addManager() {
     {
       type: 'number',
       name: 'officeNum',
-      message: "Please enter the manager's office number:",
+      message: "Please enter the manager's office number:"
     }
   ]).then((answers) => {
     // creating a manager object based on user input
@@ -49,9 +49,53 @@ function addManager() {
     }
     // adding manager to teamRoster array
     teamRoster.push(manager)
-    console.log('Manager:', manager)
-    console.log(teamRoster)
+    // after manager info is entered, calling the addEmployee function
+    addEmployee()
   })
+}
+
+// function to allow user to choose to add another employee
+function addEmployee() {
+  inquirer.prompt({
+    type: 'list',
+    name: 'employeeChoice',
+    message: 'Select which type of employee you wish to add to the team:',
+    choices: [
+      'Engineer',
+      'Intern',
+      'Exit',
+    ],
+  }).then((answers) => {
+    // using a switch statement two employee options and exit
+    switch (answers.employeeChoice) {
+      case 'Engineer':
+        addEngineer()
+        break
+      case 'Intern':
+        addIntern()
+        break
+      case 'Exit':
+        console.log('Goodbye!')
+        // returns from the function, ends program
+        return
+      default:
+        console.log('Invalid choice')
+        addEmployee()
+    }
+  })
+}
+
+// functions for the two employee types, which are called in addEmployee() switch statement
+function addEngineer() {
+  console.log('You have selected Engineer!')
+  // re-run addEmployee()
+  addEmployee()
+}
+
+function addIntern() {
+  console.log('You have selected Intern!')
+  // re-run addEmployee()
+  addEmployee()
 }
 
 // init function, in this case starting by calling addManager()
