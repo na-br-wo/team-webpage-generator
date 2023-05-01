@@ -44,12 +44,12 @@ function addManager() {
     }
   ]).then((answers) => {
     // creating a manager object based on user input
-    const manager = {
-      name: answers.name,
-      id: answers.id,
-      email: answers.email,
-      officeNum: answers.officeNum
-    }
+    const manager = new Manager(
+      answers.name, 
+      answers.id, 
+      answers.email, 
+      answers.officeNum
+      )
     // adding manager to teamRoster array
     teamRoster.push(manager)
     // after manager info is entered, calling the addEmployee function
@@ -115,12 +115,12 @@ function addEngineer() {
     }
   ]).then((answers) => {
     // creating an engineer object based on user input
-    const engineer = {
-      name: answers.name,
-      id: answers.id,
-      email: answers.email,
-      officeNum: answers.github
-    }
+    const engineer = new Engineer(
+      answers.name,
+      answers.id,
+      answers.email,
+      answers.github
+    )
     // adding engineer to teamRoster array
     teamRoster.push(engineer)
     // after engineer info is entered, calling the addEmployee function
@@ -153,12 +153,12 @@ function addIntern() {
     }
   ]).then((answers) => {
     // creating an intern object based on user input
-    const intern = {
-      name: answers.name,
-      id: answers.id,
-      email: answers.email,
-      school: answers.school
-    }
+    const intern = new Intern(
+      answers.name,
+      answers.id,
+      answers.email,
+      answers.school
+    )
     // adding manager to teamRoster array
     teamRoster.push(intern)
     // after intern info is entered, calling the addEmployee function
