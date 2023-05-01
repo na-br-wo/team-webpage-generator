@@ -79,8 +79,10 @@ function addEmployee() {
         addIntern()
         break
       case 'Exit':
-        console.log('Goodbye!')
-        console.log(teamRoster)
+        console.log('Generating index.html file in ./dist directory...')
+        // fs code that writes the HTML file
+        fs.writeFile('./dist/index.html', generateHTML(teamRoster), (err) =>
+          err ? console.log(err) : console.log('Successfully created index.html!'))
         // returns from the function, ends program
         return
       default:
