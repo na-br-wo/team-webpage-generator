@@ -29,10 +29,14 @@ function addManager() {
       message: "Please enter the manager's office number:"
     }
   ]).then((answers) => {
-    console.log(`Hello, ${answers.name}!`)
-    console.log(`ID: ${answers.id}`)
-    console.log(`Email: ${answers.email}`)
-    console.log(`Office: ${answers.officeNum}`)
+    // creating a manager object based on user input
+    const manager = {
+      name: answers.name,
+      id: answers.id,
+      email: answers.email,
+      officeNum: answers.officeNum
+    }
+    console.log('Manager:', manager)
   })
 }
 
