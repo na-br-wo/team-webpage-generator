@@ -76,6 +76,7 @@ function addEmployee() {
         break
       case 'Exit':
         console.log('Goodbye!')
+        console.log(teamRoster)
         // returns from the function, ends program
         return
       default:
