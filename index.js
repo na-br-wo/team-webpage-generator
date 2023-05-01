@@ -36,7 +36,10 @@ function addManager() {
       email: answers.email,
       officeNum: answers.officeNum
     }
+    // adding manager to teamRoster array
+    teamRoster.push(manager)
     console.log('Manager:', manager)
+    console.log(teamRoster)
   })
 }
 
