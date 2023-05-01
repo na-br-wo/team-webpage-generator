@@ -12,8 +12,14 @@ header {
   background-color: lightseagreen;
 }
 
+.card-container {
+  display: flex;
+  padding: 1rem;
+}
+
 #card {
   background: white;
   width: 200px;
-  margin: 0 auto;
+  margin: 25px auto;
+  padding: 10px;
 }

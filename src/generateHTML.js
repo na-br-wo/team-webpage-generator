@@ -47,7 +47,9 @@ function generateHTML(teamRoster) {
         <header>
           <h1>Project Team</h1>
         </header>
-        ${teamHTML}
+        <div class="card-container">
+          ${teamHTML}
+        </div>
       </body>
     </html>
   `
