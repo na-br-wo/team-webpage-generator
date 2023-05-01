@@ -23,7 +23,7 @@ function generateHTML(teamRoster) {
     if (employee.github) {
       employeeCardHTML += `<p>Github: <a href="https://github.com/${employee.github}">${employee.github}</a></p>`
     }
-    if (employee.officeNum) {
+    if (employee.school) {
       employeeCardHTML += `<p>School: ${employee.school}</p>`
     }
 
