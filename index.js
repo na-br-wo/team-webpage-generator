@@ -5,7 +5,17 @@ const inquirer = require('inquirer')
 // empty array containing team members
 const teamRoster = []
 
-// initial function to add team manager
+// regex function used to validate email addresses
+const validateEmail = (input) => {
+  // regex for validating email addresses
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if (regex.test(input)) {
+    return true
+  }
+  return 'Please enter a valid email address'
+}
+
+// function to add team manager
 function addManager() {
   inquirer.prompt([
     {
@@ -21,12 +31,13 @@ function addManager() {
     {
       type: 'input',
       name: 'email',
-      message: "Please enter the manager's email address:"
+      message: "Please enter the manager's email address:",
+      validate: validateEmail
     },
     {
       type: 'number',
       name: 'officeNum',
-      message: "Please enter the manager's office number:"
+      message: "Please enter the manager's office number:",
     }
   ]).then((answers) => {
     // creating a manager object based on user input
