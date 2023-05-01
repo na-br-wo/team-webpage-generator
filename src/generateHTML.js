@@ -44,7 +44,9 @@ function generateHTML(teamRoster) {
         <title>Project Team</title>
       </head>
       <body>
-        <h1>Project Team</h1>
+        <header>
+          <h1>Project Team</h1>
+        </header>
         ${teamHTML}
       </body>
     </html>
