@@ -9,7 +9,7 @@ function generateHTML(teamRoster) {
     // creating a card <div> element, starting with the basic info -- name, ID, email -- that
     // every employee has
     let employeeCardHTML = `
-      <div id="card">
+      <div class="card">
         <h2>${employee.name}</h2>
         <p>ID: ${employee.id}</p>
         <p>Email: <a href="mailto:${employee.email}">${employee.email}</a></p>
@@ -44,7 +44,9 @@ function generateHTML(teamRoster) {
         <title>Project Team</title>
       </head>
       <body>
-        <h1>Project Team</h1>
+        <header>
+          <h1>Project Team</h1>
+        </header>
         ${teamHTML}
       </body>
     </html>
